@@ -31,10 +31,7 @@
     // Your code here
     const table = document.querySelector('table')
     MOUNTAINS.forEach(function(mount){
-        const name = mount.name;
-        const height = mount.height;
-        const place = mount.place;
-        const array = [name, height, place]
+        const array = [mount.name, mount.height, mount.place]
         const tableRow = document.createElement('tr')
         for(let i = 0; i < array.length; i++){
             const tableData = document.createElement('td')
