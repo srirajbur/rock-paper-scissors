@@ -7,7 +7,7 @@ let computerScore = 0
 let playerScore = 0
 
 function playRound(playerSelection, computerSelection){
-    computerSelection = computerPlay().toLowerCase()
+    computerSelection = computerSelection.toLowerCase()
     playerSelection = playerSelection.toLowerCase()
     //computer winning
     if(
