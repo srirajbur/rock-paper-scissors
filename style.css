@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +12,7 @@ html{
 }
 
 body{
+    font-family:  'Press Start 2P', cursive;
     height: 100vh;
 }
 
@@ -18,4 +22,31 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ba8dee;
+    color: black;
+}
+
+.summary{
+    font-size: 3rem;
+    font-family: 'Bangers', cursive;
+}
+
+#btns{
+    margin: 2rem 0;
+}
+
+.btn{
+    cursor: pointer;
+    color:#ffa835;
+    border: none;
+    padding: 1rem;
+    background-color: #59b4ce;
+}
+
+#results{
+    font-size: 1.6rem;;
+    width: 390px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
 }
