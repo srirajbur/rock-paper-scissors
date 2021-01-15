@@ -14,10 +14,13 @@ html{
 body{
     font-family:  'Press Start 2P', cursive;
     height: 100vh;
+    text-align: center;
+    background-color: #ba8dee;
+    overflow: hidden;
 }
 
 #container{
-    height: 100vh;;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,6 +42,7 @@ body{
     cursor: pointer;
     color:#ffa835;
     border: none;
+    margin: 1rem;
     padding: 1rem;
     background-color: #59b4ce;
 }
@@ -49,4 +53,22 @@ body{
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
+}
+
+@media only screen and (max-width: 400px) {
+    
+    .btn{
+        width: 200px;
+        height: 1px;
+        background-color: #ba8dee;
+    }
+    
+    #results{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .counter{
+        margin-top: 2rem;
+    }
 }

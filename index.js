@@ -1,3 +1,4 @@
+//Functions
 function computerPlay(){
     const arr = ['rock', 'paper', 'scissors']
     let random = Math.round(Math.random() * 2)
@@ -31,45 +32,48 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-// function game(){
-//     for(let i = 0; i < 5; i++){
-//         playRound(playerPlay(), computerPlay())
-//     }
+function whoWins(){
+    let endText = `Reload to play another match`
+    if(computerScore > playerScore){
+        return `🤖 wins this match!`
+    } else if(playerScore > computerScore){
+        return `You win this match!`
+    } else{
+        return `Its a tie match!`
+    }
+}
 
-//     console.log(`Player Score: ${playerScore}, Computer Score: ${computerScore}`)
-    
-//     if(computerScore > playerScore){
-//         console.log(`Computer Wins!`)
-//     } else if(playerScore > computerScore){
-//         console.log('Player Wins!')
-//     } else{
-//         console.log(`Its a tie`)
-//     }
-// }
-// game()
+function reset(){
+    computerScore = 0;
+    playerScore = 0;
+}
 
-// playerScore = 0
-// computerScore = 0
-
-//-------------------------------------
 
 //Selectors
 const btns = document.querySelectorAll('.btn');
 const summary = document.querySelector('.summary');
 const playerResult = document.querySelector('.player');
 const computerResult = document.querySelector('.computer');
-// console.log(choices)
 
-console.log(btns)
 
 //Events
 btns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
+    btn.addEventListener('click', function(e){        
         const playerSelection = btn.id;
         let result = playRound(playerSelection, computerPlay());
         playerResult.textContent = `Player: ${playerScore}`;
         computerResult.textContent = `Computer: ${computerScore}`;
-        summary.textContent = result;
+        if(computerScore >= 5 || playerScore >= 5){
+            const winner = whoWins();
+            summary.style.color = "red"
+            summary.textContent = winner;
+            reset()
+        } else {
+            summary.style.color = "black"
+            summary.textContent = result;
+        }
     })
 })  
+
+
 
